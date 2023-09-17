@@ -27,7 +27,7 @@ class Phone
     // Methods
     void showBasic()
     {
-        std::cout << "Phone " << brand << " " << " with specs: " << std::endl;
+        std::cout << "Phone " << brand << " " << model << " with specs: " << std::endl;
         std::cout << "RAM: " << ramCount << "GB" << std::endl;
         std::cout << "Back camera pixel count: " << cameraPixelCount << "MP" << std::endl;
         std::cout << "Battery cappacity: " << batteryCapacity << "mAh" << std::endl; 
@@ -81,7 +81,7 @@ class PhoneBuilder : public Builder
     void setWaterproof(bool isWaterproof) override
     { isWaterproof ? this->initPhone->additionalInfo.insert(std::make_pair("Waterproof", "Yes")) : this->initPhone->additionalInfo.insert(std::make_pair("Waterproof", "No")); }
     void setHasFrontCamera(bool hasCameraFront) override
-    { hasCameraFront ? this->initPhone->additionalInfo.insert(std::make_pair("Camera -front ", "Yes")) : this->initPhone->additionalInfo.insert(std::make_pair("Camera -front ", "No")); }
+    { hasCameraFront ? this->initPhone->additionalInfo.insert(std::make_pair("Camera - front ", "Yes")) : this->initPhone->additionalInfo.insert(std::make_pair("Camera -front ", "No")); }
     Phone* getProduct()
     {
         Phone* productPhone = initPhone;
@@ -89,6 +89,7 @@ class PhoneBuilder : public Builder
         return productPhone;
     }
 
+    PhoneBuilder() { this->reset(); }
     ~PhoneBuilder()
     { if(initPhone) { delete initPhone; } }
 };
@@ -148,6 +149,20 @@ void clientCode(Director* director)
     // Cleanup
     delete mePhonePro;
 
+    // Creation of mePhoneNormal without director
+    Phone* mePhoneNormalNoDirector; 
+    phoneSpammingMachine->setBrand("Pear");
+    phoneSpammingMachine->setModel("MePhone 12");
+    phoneSpammingMachine->setRamCount(10);
+    phoneSpammingMachine->setBackCameraPixelCount(14);
+    phoneSpammingMachine->setBatteryCapacity(10250);
+    mePhoneNormalNoDirector = phoneSpammingMachine->getProduct();
+
+    mePhoneNormalNoDirector->showBasic();
+    mePhoneNormalNoDirector->showExtened();
+
+    // Delete phone object
+    delete mePhoneNormalNoDirector;
     // Builders are no longer needed
     delete phoneSpammingMachine;
 }
