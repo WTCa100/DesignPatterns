@@ -21,6 +21,7 @@ class CompanyMember
     virtual ~CompanyMember() {}
 };
 
+// Leafs
 class CEO : public CompanyMember
 {
     protected:
