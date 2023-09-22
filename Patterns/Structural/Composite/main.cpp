@@ -1,3 +1,11 @@
+/**
+ * Example implementation of composite design pattern. A composite pattern allows to split the code into a tree structure and treat each individual leaf uniformally.
+ * This only works when provided hierarchy can be devided into tree structure.
+ * @date 2023-09-22
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <vector>
 #include <string>
