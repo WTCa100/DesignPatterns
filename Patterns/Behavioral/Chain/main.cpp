@@ -116,6 +116,7 @@ void lunchBreak(CanteenHandle* firstCustomer)
             std::cout << "No one has ate that!" << std::endl;
         }
     }
+    for(auto vec_record : foodBuffet) { delete vec_record; }
 }
 
 int main()
