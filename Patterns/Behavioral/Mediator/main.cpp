@@ -265,7 +265,7 @@ class RideMediator : public Mediator
                 bool driverFound = false;
                 for(auto candidate : this->driversList_)
                 {
-                    if((sender->getRideType() == candidate->getDriverSpeciality()) && sender->getRideType() != rideType::casual)
+                    if((sender->getRideType() == candidate->getDriverSpeciality()) && sender->getRideType() != rideType::casual && candidate->getFreeStatus())
                     {
                         std::cout << "Found a driver with specific request!" << std::endl;
                         giveJob(candidate, sender);
