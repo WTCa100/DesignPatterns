@@ -53,6 +53,8 @@ class Car
     State* carState_;
     public:
     Car() : carState_(nullptr) { changeState(new StateOff); }
+    
+    // State handles
     void checkHood()
     {
         std::cout << "I have to check what's under the hood." << std::endl;
@@ -63,22 +65,19 @@ class Car
         std::cout << "I need to get to " << dest << std::endl;
         carState_->drive();
     }
-
     void changeState(State* statusNew)
     {
         if(this->carState_ != nullptr) { delete this->carState_; }
         carState_ = statusNew;
         carState_->setContext(this);
     }
-
     void turnOn() { carState_->turnOn(); }
     void turnOff() { carState_->turnOff(); }
 
     ~Car() { delete carState_; }
 };
 
-
-
+// Change of state happens here
 void StateOn::turnOff()
 {
     std::cout << "Turning the engine off." << std::endl;
@@ -86,6 +85,7 @@ void StateOn::turnOff()
     this->context_->changeState(new StateOff);
 }
 
+// Change of state happens here
 void StateOff::turnOn()
 {
 
@@ -112,5 +112,6 @@ int main()
     Tojeta->checkHood();
     Tojeta->turnOff();
 
+    // Cleanup
     delete Tojeta;
 }
