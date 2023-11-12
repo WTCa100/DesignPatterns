@@ -38,7 +38,7 @@ class BattleStrategy
 {
     public:
     virtual void fight() = 0;
-    ~BattleStrategy() {}
+    virtual ~BattleStrategy() {}
 };
 
 // Concrete strategy
