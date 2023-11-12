@@ -16,6 +16,8 @@ class Sandwitch
         this->addSpices();
     }
     
+    /// @brief The freedom for the client to change the bread type can be considered a violation of Liskov substitution principle.
+    /// We can limit this by either expanding bread types into a constant map or allow only for one type of bread.
     virtual void prepareBread() { std::cout << "Adding plain white bread." << std::endl; }
     virtual void addVegetables() { std::cout << "Adding some lettuce and onion." << std::endl; }
     virtual void addCore()  = 0;
