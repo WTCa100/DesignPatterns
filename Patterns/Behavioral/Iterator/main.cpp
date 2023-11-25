@@ -1,3 +1,11 @@
+/**
+ * This is an example implementation of the Iterator pattern. This pattern simply allows the user to traverse a given container without exposing it's underlying
+ * structure. It's used via iterators with a specific behaviour in mind - like filtering specific components by their members.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 #include <vector>

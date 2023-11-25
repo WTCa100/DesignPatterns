@@ -1,5 +1,5 @@
 /**
- * In this file we can find a bridge implementation. A bridge is simply a split of a bigger, complex class into 2 separate classes where one takes role
+ * This is an example of the Bridge pattern. A bridge is simply a split of a bigger, complex class into 2 separate classes where one takes role
  * of abstraction, with a higher level instructionality, and the second one takes a role of implementation the lower level methods + additional
  * complex methods related to the proper working of a class. 
  * @date 2023-09-21

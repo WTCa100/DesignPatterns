@@ -1,6 +1,7 @@
 /**
- * In this program we will take a closer look into a prototype design pattern. A prototype gives the client the ability to clone desired concrete objects
- * with all of it's fields being identical (including the private ones).
+ * This is an exampel implementation of the Prototype pattern. A prototype gives the client the ability to clone desired concrete objects
+ * with all of it's fields being identical (including the private ones). Each prototype has a built-in "clone" method that will return
+ * the new object with the same attributes as the calling instance.
  * @date 2023-09-17
  * 
  * @copyright Copyright (c) 2023
@@ -93,6 +94,7 @@ void clienCode()
     }
 
     // Remove animals
+    // Prototype removal is clients' responsiblity.    
     for(auto livestock : animalFarm)
     {
         delete livestock;

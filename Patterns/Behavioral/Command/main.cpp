@@ -1,3 +1,12 @@
+/**
+ * This is an example of the Command pattern. In this pattern a request resolver (a command receiver) will get request via different request senders (invokres).
+ * Each command leaves a footprint, and it's action is being stored inside a "command history" that allows the user to "undo" it's actions later on.
+ * The user shall not operate directly on the receiver but rather use the invokers.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include<iostream>
 #include<vector>
 #include<string>

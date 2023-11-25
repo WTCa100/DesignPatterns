@@ -1,3 +1,12 @@
+/**
+ * This is an example implementation of the "Proxy" deisgn pattern. This design will provide the user access to the proxy of a given server library.
+ * The user instead of operaiting on a real server will ask the proxy to querry an request, this proxy will then do the logic and ask
+ * the real server for a specific request if conditions are met.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 #include <set>
@@ -52,6 +61,7 @@ class Server : public ServerLib
 };
 
 // Concrete proxy server class
+// Proxy handles the necessary logic and decides if it can pass the request to a real server.
 class ServerProxy : public ServerLib
 {
 private: 
@@ -96,6 +106,8 @@ public:
     ~ServerProxy() { delete serviceProvider_; }
 };
 
+// Application that contains server library interface but connects to it via proxy.
+// It will never make an call to a real server.
 class KidsManager
 {
     private:

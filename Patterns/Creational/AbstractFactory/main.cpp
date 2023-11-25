@@ -1,5 +1,5 @@
 /**
- * This is a example implementation of Abstract factory, which is a more complicated but in the same time more flexible version of
+ * This is an example implementation implementation of Abstract factory, which is a more complicated but in the same time more flexible version of
  * normal Factory method, exept this time we use a subset of abstract products, with their respected constructions being present
  * in different factories.
  * @date 2023-09-10

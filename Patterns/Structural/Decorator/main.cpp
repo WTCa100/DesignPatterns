@@ -1,3 +1,12 @@
+/**
+ * This is an example implementation of the Decorator pattern. The core idea here is to allow changing the concrete classes during the runtime. 
+ * Because the base decorator interface contains the refference to a core concrete object it can manipulate on what it does depening what type of 
+ * decorator is calling concrete class methods.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 
@@ -9,7 +18,7 @@ class Dog
     virtual std::string retrieve(int distance) = 0;
 };
 
-// Concrete object
+// Concrete class
 class ConcreteDog : public Dog
 {
     public:

@@ -1,5 +1,5 @@
 /**
- * This is a example implementation of a creational design pattern of factory method.
+ * This is an example implementation implementation of a creational design pattern of factory method.
  * Each concrete class is a child of a superclass, the subclass contain a constructor inside a method,
  * thus it can alter it construction process from within one place in code. 
  * There also is a interface that is being used by the concrete subclasses to do a specific task.

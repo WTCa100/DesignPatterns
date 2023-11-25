@@ -1,3 +1,12 @@
+/**
+ * This is an example implementation of the State pattern. The idea here is that a single object can have multiple states, that behave differently.
+ * The state of an object is stored inside a State class, the common functionality of each state is put into an interface thus an object can invoke
+ * different behaviour depening on the state it currently have.
+ * @date 2023-11-19
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 

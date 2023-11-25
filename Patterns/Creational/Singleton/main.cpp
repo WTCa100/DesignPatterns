@@ -1,5 +1,5 @@
 /**
- * This is an example of Singleton implementation. In such pattern teh software can use only 1 instance of certain object with global access point to it.
+ * This is an example of the Singleton implementation. In such pattern the class can have only 1 instance of itself with global access point to it.
  * @note This is not a thread safe code.
  * @date 2023-09-17
  * 

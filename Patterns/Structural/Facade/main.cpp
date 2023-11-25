@@ -1,6 +1,15 @@
+/**
+ * This is an example implementation of the Facade pattern. To put it briefly, there is a complex library - "TravelingMgt.h" that useses a lot of logic.
+ * It's hard for the user to completly understand it, so a Facade comes in that simplify the usage of the library.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 
+// Part of the complex logic
 class CarRentalAPI
 {
     private:
@@ -25,6 +34,7 @@ class CarRentalAPI
     void changeLocation(std::string newLocation) { this->location_ = newLocation; }
 };
 
+// Part of the complex logic
 class HotelBookingAPI
 {
     private:
@@ -62,6 +72,7 @@ class HotelBookingAPI
     void changeLocation(std::string newLocation) { this->location_ = newLocation; }
 };
 
+// Part of the complex logic
 class PlaneBookingAPI
 {
     private:
@@ -83,6 +94,7 @@ class PlaneBookingAPI
 
 };
 
+// Facade
 class FullTravelBooking
 {
     public:
@@ -116,6 +128,7 @@ class FullTravelBooking
     }
 };
 
+// Client code & usage
 void clientCode(FullTravelBooking* FTB, std::string location, std::string pricing)
 {
     FTB->fullBook(location ,pricing);

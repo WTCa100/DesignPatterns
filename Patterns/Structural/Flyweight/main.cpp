@@ -1,3 +1,12 @@
+/**
+ * This is an example implementation of the "Flyweight" deisgn pattern. It reduced the ammount of RAM that each object consumes.
+ * This is done by separating some of the concrete class members into a mutable class and the rest into a not mutable class.
+ * This later allows to create a multiple objects with the same instance of repetetive characteristics.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,16 +14,16 @@
 enum ItemStyle
 {
     artDeco = 0,
-    vintage,
-    modern
+    vintage = 1,
+    modern  = 2
 };
 
 // Unique state - mutable
 class ItemType
 {
     public:
-    std::string name_;
-    std::string texture_;
+    std::string name_;    // Or we can add a unique name to it
+    std::string texture_; // We can change texture of a given item
     int value_;
     ItemType(std::string name, std::string texture, int value) : name_(name), value_(value), texture_(texture) {}
     void displayDetails()
@@ -64,9 +73,9 @@ class ItemFactory
 class Item
 {
     private:
-    int x_, y_;
-    ItemStyle style_;
-    ItemType* conItem_;
+    int x_, y_;         // Once an item is placed it cannot be moved.
+    ItemStyle style_;   // If a style is choosen, no other style can be assign to this specific object.
+    ItemType* conItem_; // Gives refference to a unique item state
     public:
     Item(int coordX, int coordY, ItemStyle style, ItemType* type) : x_(coordX), y_(coordY), style_(style), conItem_(type) {}
     void display()

@@ -1,3 +1,11 @@
+/**
+ * This is an example implementation of the Mediator pattern. This pattern limits the communication between given set of classes to a single mediator that
+ * maintain the request / response to / from them. This allows the code to be less prone to complex dependencies.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 #include <time.h>
@@ -8,9 +16,9 @@
 enum rideType
 {
     wfw    = 0,
-    casual    ,
-    pet       ,
-    none
+    casual = 1,
+    pet    = 2,
+    none   = 3
 };
 
 enum requestType
@@ -23,12 +31,14 @@ enum requestType
 class Passenger;
 class Driver;
 
-// Interface mediator (prototype)
+// Interface mediator
+// Generally there can be more than one mediator that derrivers from the parent class. Each mediator can handle different types of requests.
 class Mediator
 {
     protected:
     std::vector<Driver*> driversList_;
     public:
+    // The method notify is the communicative core of a mediator.
     virtual void notify(Passenger* sender, requestType reqType) = 0;
     virtual void addDriver(Driver* driverNew) = 0;
     virtual void removeDriver(Driver* driverDelete) = 0;
@@ -38,6 +48,7 @@ class Mediator
 
 // Component family - passenger
 // Component parent
+// Each component can contact only it's mediator.
 class Passenger
 {
     protected:
@@ -240,6 +251,7 @@ class RideMediator : public Mediator
         std::cout << "Successfully deleted " << driverDelete->getName() << " from active drivers! See you soon!" << std::endl; 
     }
 
+    // The notify method does the necessary logic as well as handles communication between classes.
     void notify(Passenger* sender, requestType reqType)
     {
         std::string senderName = sender->getName();

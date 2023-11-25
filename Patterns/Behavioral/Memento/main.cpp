@@ -1,3 +1,13 @@
+/**
+ * This is an example implementation of a Memento design pattern. This pattern allows to save a current state of a originator class - both private and public 
+ * members. This enables the ability to jump from snapshot to snapshot restoring the originator state from each saved memento. This can be easliy used
+ * as a "undo" solution - similar to the command pattern but with the difference of storing entire originator class and not only the command that
+ * was used on it. As we are using C++ we can directly decleare a memento class inside the originator class.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include<iostream>
 #include<string>
 #include<vector>

@@ -1,4 +1,4 @@
-// C++ allows multiple inheritance thus it can make our software less complex
+// C++ allows multiple inheritance thus it can make the program less complex
 #include <iostream>
 
 // This is just a concrete class not related to the adapter design pattern. You could do it without it.

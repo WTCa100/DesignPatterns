@@ -1,6 +1,5 @@
 /**
- * This is an example implementation of adapter structural design pattern. Here an adapter class will be used in order to make 2 incompatible classes
- * copmatible again.
+ * This is an example of Structural pattern. The idea here is to allow different classes to work on a interface that is not compatible with them.
  * @date 2023-09-20
  * 
  * @copyright Copyright (c) 2023

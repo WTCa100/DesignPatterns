@@ -1,3 +1,13 @@
+/**
+ * This is an example implementation of the Visitor design pattern. In this pattern we have 2 classes - a visitor, it's only job is to perform a task in a given object.
+ * It's functionality is called from the object itself, thus the it does not need to know what type called it from. A visitor have a method for each
+ * possible object that it needs to visit. That way it is easier to extend it's functionality for different methods.
+ * @date 2023-11-21
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,6 +16,7 @@
 class GovVisitor
 {
     public:
+    // A visitor shall have a handle for each object type it will be called from.
     virtual void visitKingdom(class Kingdom* visiting) = 0;
     virtual void visitRepublic(class Republic* visiting) = 0;
     virtual void visitTribe(class Tribe* visiting) = 0;
@@ -19,6 +30,7 @@ class Goverment
     int rulerAge_;
     std::string name_;
     public:
+    // Visitor is called from the object itself so thata the type is always well known for it.
     virtual void accept(GovVisitor* gV) = 0;
     virtual void handleSuccession() = 0;
 

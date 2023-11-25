@@ -1,3 +1,13 @@
+/**
+ * This is an example of the Template pattern. In this pattern we have a core interface provided with some functionality already included and some yet
+ * to be included in the child classes. This allows for an easier creation of a derrived class that is similar to other, as there is only a little 
+ * change to be made in the inherited methods. A repetetive pattern of a method can be override if necessary, the abstract template only cares
+ * for the core (non-repetitive) methods to be implemented.
+ * @date 2023-11-21
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 

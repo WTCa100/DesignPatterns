@@ -1,5 +1,5 @@
 /**
- * This is a example of a deisgn pattern called builder. This approach is intended mainly in software with large objects with a complex
+ * This is an example implementation of the build pattern. This approach is intended mainly in software with large objects with a complex
  * construction mechanism. Here we will put our building components inside a method into the superclass and have a director that will
  * automatically set in what order a specific part of the objec has to be done.
  * @date 2023-09-14

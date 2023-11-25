@@ -1,3 +1,11 @@
+/**
+ * This is an example implementation of the Observer design pattern. In this pattern classes are divided into receivers and senders - or subsribers and publishers.
+ * Publishers send informations to their subsribers that are stored inside subscriber. Each concrete publisher has it's own set of subscribers. 
+ * @date 2023-11-18
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include<iostream>
 #include<string>
 #include<vector>

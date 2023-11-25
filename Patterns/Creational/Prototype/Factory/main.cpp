@@ -1,7 +1,7 @@
 /**
- * In this program we will take a closer look into a prototype design pattern. A prototype gives the client the ability to clone desired concrete objects
- * with all of it's fields being identical (including the private ones).
- * In this situation we are also using factory method that will be store the preset of certain class combinations, and used as a cloner later on.
+ * This is a variation of the Prototype pattern implementation where the cloning is being done with a help of the factory method.
+ * In this situation the factory design pattern holds the original instance of a desired object. When the factory is called
+ * to get an object it will simply clone one of the existing preset prototypes and return it.
  * @date 2023-09-17
  * 
  * @copyright Copyright (c) 2023
@@ -140,6 +140,7 @@ void clienCode(AnimalFactory* factory)
     }
 
     // delete animals
+    // Prototype removal is clients' responsiblity.
     for(auto livestock : animalFarm)
     {
         delete livestock;

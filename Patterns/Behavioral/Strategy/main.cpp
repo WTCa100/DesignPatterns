@@ -1,3 +1,11 @@
+/**
+ * This is an example implementation of the Strategy pattern. In this pattern, an object that has received a request will choose how it will handle it.
+ * The strategy will be choosen depending on buisness logic.
+ * @date 2023-11-19
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include<iostream>
 #include<string>
 

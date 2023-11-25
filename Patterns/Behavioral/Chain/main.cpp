@@ -1,8 +1,17 @@
+/**
+ * This is an implementation of the "CoR" -> Chain of Responsibility. This design pattern uses "handles" in order to complete a specific request.
+ * Each handle can either "handle" a specific request or it can move it to the next handle.
+ * If there is no next handle and the last one cannot complete the request, then the request is was unable to be completed
+ * If at least one handle can complete the request, no other handle will be called.
+ * @date 2023-11-15
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 #include <string>
 #include <time.h>
 #include <vector>
-
 
 // One concrete object
 class Food
@@ -25,6 +34,7 @@ public:
 class CanteenHandle
 {
     public:
+    // The interface only contain the next setter and core handle method.
     virtual void setNext(CanteenHandle* nextHandle) = 0;
     virtual std::string handle(Food* request) = 0;
 };
@@ -55,13 +65,17 @@ class CanteenComponent : public CanteenHandle
 class AmyHandler : public CanteenComponent
 {
     public:
+    // Concrete handle implements it's own logical checks.
     std::string handle(Food* request) override
     {
         // Check if the handle shall proceede
+        // Conditions are met?
         if(!request->hasMeat_ && !request->hasCheese_)
         {
+            // Exit the handle
             return "Amy: Om nom nom nom";
         }
+        // Conditions are not met? Then pass the request to the next handle.
         std::cout << "Amy says: I am not eating that. It has meat or cheese in it and I am a vegan!" << std::endl;
         return CanteenComponent::handle(request);
     }
