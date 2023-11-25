@@ -7,5 +7,7 @@ This repository is more of a dictionary of all design patterns that I've impleme
 
 ### Compiling
 Each of the design pattern is located under it's folder, there is no cmake file nor any makefile. In order to compile one shall navigate to the desired pattern folder, and use g++ to compile it.
-`g++ {workspace root}/Patterns/{pattern type}/{pattern name}/main.cpp -o {output filename}`
+``` Shell
+g++ {workspace root}/Patterns/{pattern type}/{pattern name}/main.cpp -o {output filename}
+```
 The above command should do the trick.
