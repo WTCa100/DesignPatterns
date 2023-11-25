@@ -45,6 +45,7 @@ class Command
     Command(TextEditor* editor, std::string optionalText = "") : currentEditor_(editor), text_(optionalText) {}
     virtual bool execute() = 0;
     virtual void undo() = 0;
+    virtual ~Command() {}
 };
 
 // The following are the concrete commands.

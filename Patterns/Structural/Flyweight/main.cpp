@@ -25,7 +25,7 @@ class ItemType
     std::string name_;    // Or we can add a unique name to it
     std::string texture_; // We can change texture of a given item
     int value_;
-    ItemType(std::string name, std::string texture, int value) : name_(name), value_(value), texture_(texture) {}
+    ItemType(std::string name, std::string texture, int value) : name_(name), texture_(texture), value_(value) {}
     void displayDetails()
     {
         std::cout << "This is " << this->name_ << ". It has " << this->texture_ << " texture. Cost: " << this->value_ << std::endl;

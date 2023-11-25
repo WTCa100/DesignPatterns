@@ -145,7 +145,7 @@ class Driver
         rideType driverSpeciality_;
     public:
         Driver(Mediator* mediator, std::string driverName, rideType type) :
-        applicationMediator_(mediator), name_(driverName), driverSpeciality_(type), isFree_(true), distanceFromTarget_(generateDistance()) 
+        applicationMediator_(mediator), name_(driverName), isFree_(true), distanceFromTarget_(generateDistance()), driverSpeciality_(type) 
         {
             signIn();
         }

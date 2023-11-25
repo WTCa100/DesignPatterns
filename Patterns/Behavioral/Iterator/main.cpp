@@ -26,6 +26,7 @@ class Iterator
     virtual void goNext() = 0;
     virtual Book* getCurrent() = 0;
     virtual bool isLast() = 0;
+    virtual ~Iterator() {}
 
 };
 // Concrete Iterator
@@ -61,9 +62,9 @@ class Bookshelf
     public:
     virtual Iterator* createLiteratureIterator() = 0;
     virtual Iterator* createGeneralIterator() = 0;
-    virtual Book* getBookById(int id) = 0;
+    virtual Book* getBookById(size_t id) = 0;
     virtual int getCollectionSize() = 0;
-
+    virtual ~Bookshelf() {}
 };
 // Concrete Collection
 class GeneralBookShelf : public Bookshelf
@@ -74,7 +75,7 @@ class GeneralBookShelf : public Bookshelf
     GeneralBookShelf(std::vector<Book*> initialBook) : shelfContent_(initialBook) {}
     Iterator* createLiteratureIterator() override { return new LiteratureIterator(this); }
     Iterator* createGeneralIterator() override { return new GeneralIterator(this); }
-    Book* getBookById(int id) override
+    Book* getBookById(size_t id) override
     {
         if(id >= shelfContent_.size())
         {

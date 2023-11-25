@@ -25,6 +25,7 @@ class Animal
     // Cloning
     virtual Animal* clone() const = 0;
     virtual void show() const = 0;
+    virtual ~Animal() {}
 };
 
 // Concrete prototype 1

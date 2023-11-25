@@ -29,7 +29,7 @@ class CEO : public CompanyMember
     int salary_;
     public:
     std::string name_;
-    CEO(std::string name, std::string startDate, int salary) : name_(name), startingDate_(startDate), salary_(salary) {}
+    CEO(std::string name, std::string startDate, int salary) : startingDate_(startDate), salary_(salary), name_(name) {}
     void presentSelf() override
     {
         std::cout << "I am " << this->name_ << ". I am a CEO of this company since " << this->startingDate_ << std::endl;

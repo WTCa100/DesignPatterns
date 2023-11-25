@@ -29,7 +29,7 @@ class EnemyClass
     weapon heldWeapon_;
     bool alive_;
     public:
-    EnemyClass(std::string name, weapon weapon) : name_(name), heldWeapon_(weapon), health_(100), baseStat_(10), alive_(true) {} 
+    EnemyClass(std::string name, weapon weapon) : name_(name), health_(100), baseStat_(10), heldWeapon_(weapon), alive_(true) {} 
     virtual void setName(std::string newName)           = 0;
     virtual std::string getName()                       = 0;
     virtual bool isAlive()                              = 0;
@@ -256,6 +256,7 @@ class Enemy
     {
         unit_->blockAttack();
     }
+    virtual ~Enemy() {}
 };
 
 // Extended abstraction

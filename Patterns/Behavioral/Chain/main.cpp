@@ -37,6 +37,7 @@ class CanteenHandle
     // The interface only contain the next setter and core handle method.
     virtual void setNext(CanteenHandle* nextHandle) = 0;
     virtual std::string handle(Food* request) = 0;
+    virtual ~CanteenHandle() {}
 };
 
 // Abstract handle (Canteen component a.k.a. Employee)

@@ -16,6 +16,7 @@ class Dog
     public:
     virtual std::string play() = 0;
     virtual std::string retrieve(int distance) = 0;
+    virtual ~Dog() {}
 };
 
 // Concrete class

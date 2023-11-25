@@ -129,7 +129,7 @@ int main()
     };
 
     // Add subs
-    for(auto subPos = 0; subPos < potentialSubs.size(); ++subPos)
+    for(size_t subPos = 0; subPos < potentialSubs.size(); ++subPos)
     {
         if(subPos % 2 == 0) { channelCoolGames->giveSub(potentialSubs[subPos]);}
         else { channelShassanBabi->giveSub(potentialSubs[subPos]); }
@@ -144,7 +144,7 @@ int main()
     channelShassanBabi->makeContent("Goin' live with da bois!");
 
     // Cleanup
-    for(auto subPos = 0; subPos < potentialSubs.size(); ++subPos)
+    for(size_t subPos = 0; subPos < potentialSubs.size(); ++subPos)
     {
         if(subPos % 2 == 0) { channelCoolGames->takeSub(potentialSubs[subPos]);}
         else { channelShassanBabi->takeSub(potentialSubs[subPos]); }

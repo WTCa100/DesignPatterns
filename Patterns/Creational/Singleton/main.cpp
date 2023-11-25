@@ -94,7 +94,7 @@ void clientCode(Configuration* config)
 
 int main()
 {
-    Configuration* mainAppConfig;
+    Configuration* mainAppConfig = Configuration::getInstance();
     clientCode(mainAppConfig);
     mainAppConfig->resetInstance();
     return 0;

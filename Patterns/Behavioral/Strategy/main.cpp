@@ -93,7 +93,7 @@ class Battle
     Army* playerArmy_;
     public:
     // Assign default strat
-    Battle(Army* playerArmy) : playerArmy_(playerArmy) ,strat_(nullptr) { this->setStrategy(new AggresiveStrategy); }
+    Battle(Army* playerArmy) : strat_(nullptr), playerArmy_(playerArmy)  { this->setStrategy(new AggresiveStrategy); }
     void setStrategy(BattleStrategy* stratNew)
     {
         if(strat_) { delete strat_; }

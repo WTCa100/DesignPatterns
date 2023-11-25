@@ -21,7 +21,7 @@ class ServerLib
     virtual void addEntry(std::string name, int age) = 0;
     virtual void showAll() = 0;
     int getDbSize() { return db_.size(); }
-    ~ServerLib() {}
+    virtual ~ServerLib() {}
 };
 
 // Concrete real server class
